@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Geldvoorelkaar
+        psr4_prefix: Geldvoorelkaar
+        src_path: app
