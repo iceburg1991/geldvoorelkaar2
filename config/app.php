@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://geldvoorelkaar.iceburg.nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'VIlaLYZf0e4JseirZIiufh7BLy0tnle5'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Geldvoorelkaar\Providers\AppServiceProvider::class,
+        Geldvoorelkaar\Providers\AuthServiceProvider::class,
+        Geldvoorelkaar\Providers\EventServiceProvider::class,
+        Geldvoorelkaar\Providers\RouteServiceProvider::class,
 
     ],
 
