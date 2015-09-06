@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://geldvoorelkaar.iceburg.nl',
+    'url' => 'http://yoururl.nl',
 
     /*
     |--------------------------------------------------------------------------
