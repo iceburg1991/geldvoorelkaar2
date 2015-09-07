@@ -47,17 +47,12 @@
                             </div>
                             <div class="col col s8 m8 l8">
                                 <ul id="profile-dropdown" class="dropdown-content">
-                                    <li><a href="#"><i class="mdi-action-face-unlock black"></i> Profile</a>
-                                    </li>
-                                    <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
-                                    </li>
-                                    <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
-                                    </li>
+                                    <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a></li>
+                                    <li><a href="#"><i class="mdi-action-settings"></i> Settings</a></li>
+                                    <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
-                                    </li>
-                                    <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                                    </li>
+                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
+                                    <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
                                 </ul>
                                 <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                 <p class="user-roal">Administrator</p>
