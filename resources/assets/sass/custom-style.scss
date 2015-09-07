@@ -1,0 +1,20 @@
+//urls
+$url_0: url(../images/user-bg.jpg);
+
+.side-nav {
+  a {
+    line-height: 64px;
+    height: 64px;
+  }
+  .collapsible-body li a {
+    margin: 0 1rem 0 3rem;
+  }
+  li {
+    &.user-details {
+      background: $url_0 no-repeat center center;
+      background-size: cover;
+      margin-bottom: 15px;
+      padding: 15px 0 0 15px;
+    }
+  }
+}
