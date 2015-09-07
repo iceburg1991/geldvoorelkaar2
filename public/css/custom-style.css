@@ -1037,6 +1037,9 @@ tr.group {
     background: url(../images/user-bg.jpg) no-repeat center center;
     background-size: cover;
     padding: 15px 0 0 15px; }
+    .side-nav li.user-details .dropdown-content li a {
+      color: black;
+      padding: 0 15px; }
 .side-nav .profile-btn {
   margin: 0;
   text-transform: capitalize;
@@ -1050,5 +1053,4 @@ tr.group {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .dropdown-content li a {
-  color: black;
-  padding: 0 15px; }
+  color: black; }
