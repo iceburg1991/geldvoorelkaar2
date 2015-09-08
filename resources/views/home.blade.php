@@ -26,10 +26,6 @@
         <nav class="cyan">
             <div class="nav-wrapper">
 
-                <!--<ul class="left">
-                    <li class="no-hover"><a href="#" data-activates="slide-out" class="menu-sidebar-collapse btn-floating btn-flat btn-medium waves-effect waves-light cyan"><i class="mdi-navigation-menu" ></i></a></li>
-                    <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1></li>
-                </ul>-->
                 <a href="/home" class="brand-logo center">Geldvoorelkaar</a>
 
                 <!--{% if settings %} -->
