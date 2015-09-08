@@ -1,0 +1,63 @@
+@import 'style';
+
+.side-nav {
+  a {
+    line-height: 64px;
+    height: 64px;
+  }
+  .collapsible-body li a {
+    margin: 0 1rem 0 3rem;
+  }
+  li {
+    line-height: 44px;
+    &:hover {
+      background-color: $black_5;
+    }
+    &.active {
+      background-color: $black_5;
+    }
+    a {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &.user-details {
+      background: $url_0 no-repeat center center;
+      background-size: cover;
+      //margin-bottom: 15px;
+      padding: 15px 0 0 15px;
+      .dropdown-content{
+        li{
+          a{
+            color: black;
+            padding: 0 15px;
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+  }
+  .profile-image {
+  }
+  .profile-btn {
+    margin: 0;
+    text-transform: capitalize;
+    padding: 0;
+    //Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: 1px 1px 1px $color_tundora_approx;
+    font-size: 15px;
+  }
+  ul.collapsible-accordion {
+    background-color: $white;
+  }
+}
+#sidenav-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dropdown-content{
+  li{
+    a{
+      color: black;
+    }
+  }
+}

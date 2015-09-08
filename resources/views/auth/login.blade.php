@@ -7,7 +7,7 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
         <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-        <title>Page Blank | Materialize - Material Design Admin Template</title>
+        <title>Geldvoorelkaar</title>
 
         <!-- Favicons-->
         <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="input-field col s12 center">
                             <img src="/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-                            <p class="center login-form-text">Material Design Admin Template</p>
+                            <p class="center login-form-text">Geldvoorelkaar dashboard</p>
                         </div>
                     </div>
                     <div class="row margin">
