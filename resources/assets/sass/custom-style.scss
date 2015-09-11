@@ -1,4 +1,6 @@
 @import 'style';
+@import "components/color";
+@import 'components/variables';
 
 .side-nav {
   a {
@@ -56,7 +58,7 @@
 }
 .user-roal {
   color: $white;
-  margin-top: -16px;
+  margin-top: 0px;
   margin-left: -55px;
   font-size: 12px;
   font-weight: lighter;
@@ -67,5 +69,30 @@
     a{
       color: black;
     }
+  }
+}
+nav{
+  .dropdown-button{
+    float: left;
+    position: relative;
+    z-index: 1;
+    height: $navbar-height-mobile;
+    i {
+      font-size: 2.7rem;
+      height: $navbar-height-mobile;
+      line-height: $navbar-height-mobile;
+    }
+  }
+}
+
+
+
+@media #{$medium-and-up} {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, nav a.dropdown-button, nav a.dropdown-button i {
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+  .navbar-fixed {
+    height: $navbar-height;
   }
 }
