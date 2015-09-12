@@ -29,8 +29,11 @@
                 <a href="/home" class="brand-logo center">Geldvoorelkaar</a>
 
                 <!--{% if settings %} -->
-                <ul class="right">
-                    <li><a href="#!" class="dropdown-button" data-activates="actions"><i class="mdi-navigation-more-vert"></i></a></li>
+                <ul class="right hide-on-med-and-down">
+                    <li class="profile">
+                        <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image right" />
+                        <a href="#!" class="dropdown-button" data-activates="actions">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                    <!--<li><a href="#!" class="dropdown-button" data-activates="actions"><i class="mdi-navigation-more-vert"></i></a></li>-->
                 </ul>
                 <!--{% endif %}-->
                 <ul class="right hide-on-med-and-down">
@@ -302,7 +305,7 @@
                 hover: true, // Activate on hover
                 constrain_width: false, // Does not change width of dropdown to that of the activator
                 gutter: 10, // Spacing from edge
-                belowOrigin: false // Displays dropdown below the button
+                belowOrigin: true // Displays dropdown below the button
             });
         })
     </script>
