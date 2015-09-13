@@ -16,7 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('home', ['middleware' => 'auth', function() {
-    return view('home');
+    return view('dashboard');
+}]);
+Route::get('projects', ['middleware' => 'auth', function()    {
+    return view('projects');
 }]);
 
 // Authentication routes...

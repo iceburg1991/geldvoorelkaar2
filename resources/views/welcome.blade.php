@@ -1,6 +1,6 @@
 <?php $settings = array("optie1","optie2"); ?>
 @extends('master')
-
+@section('title','Home')
 
 
 
