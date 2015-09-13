@@ -36,8 +36,7 @@
             <!--start container-->
             <div class="container">
                 <div class="section">
-                    <h3>Projects</h3>
-                    <p class="caption">A Simple Blank Page to use it for your custome design and elements.</p>
+                    <p class="caption">Projects</p>
                     <div class="divider"></div>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 </div>

@@ -18,9 +18,12 @@
                 <!--{% if settings %} -->
                 <ul class="right hide-on-med-and-down">
                     <li class="profile">
-                        <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image right" />
-                        <a href="#!" class="dropdown-button" data-activates="actions">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                    <!--<li><a href="#!" class="dropdown-button" data-activates="actions"><i class="mdi-navigation-more-vert"></i></a></li>-->
+                        @if ( isset(Auth::user()->name) )
+                            <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image right" />
+                            <a href="#!" class="dropdown-button" data-activates="actions">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                        @else
+                            <li><a href="/auth/login">Inloggen</a></li>
+                        @endif
                 </ul>
                 <!--{% endif %}-->
                 <ul class="right hide-on-med-and-down">
@@ -44,7 +47,7 @@
                                     <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
                                     <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
                                 </ul>
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{-- Auth::user()->name or 'Inloggen'--}}<i class="mdi-navigation-arrow-drop-down right"></i></a>
                             </div>
                         </div>
                     </li>

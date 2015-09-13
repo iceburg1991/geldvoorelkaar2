@@ -1,53 +1,70 @@
-<?php $settings = array("optie1","optie2"); ?>
 @extends('master')
-@section('title','Home')
 
 
+@section('title','dashboard')
 
 @section('content')
-    <div class="navbar-fixed">
-        @if (count($settings) === 1)
-            <ul id="actions" class="dropdown-content">
-                @foreach ($settings as $setting)
-                    <li><a href="#!">{{ $setting }}</a></li>
-                @endforeach
-            </ul>
-        @endif
-        <nav class="blue">
-            <div class="nav-wrapper">
-                <a href="/geldvoorelkaar/" class="brand-logo center">Geldvoorelkaar</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                <!--{% if settings %} -->
-                <ul class="right">
-                    <li><a href="#!" class="dropdown-button" data-activates="actions"><i class="mdi-navigation-more-vert"></i></a></li>
-                </ul>
-                <!--{% endif %}-->
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="/geldvoorelkaar/app/template/projects.php">Projecten</a></li>
-                    <li><a href="/geldvoorelkaar/app/template/settings.php">Instellingen</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="/geldvoorelkaar"><i class="mdi-action-account-balance left"></i>Dashboard</a></li>
-                    <li><a href="/geldvoorelkaar/app/template/projects.php"><i class="mdi-action-assignment left"></i>Projecten</a></li>
-                    <div class="divider "></div>
-                    <li><a href="/geldvoorelkaar/app/template/settings.php"><i class="mdi-action-settings left"></i>Instellingen</a></li>
-                </ul>
+
+        <!-- Start Page Loading -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+
+
+@include("_navbar")
+
+        <!-- START MAIN -->
+<div id="main">
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+
+        <!-- START CONTENT -->
+        <section id="content">
+
+            <!--breadcrumbs start-->
+            <div id="breadcrumbs-wrapper" class=" grey lighten-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">Dashboard</a></li>
+                                <li><a href="#">Pages</a></li>
+                                <li class="active">Blank Page</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
+            <!--breadcrumbs end-->
+
+
+            <!--start container-->
+            <div class="container">
+                <div class="section">
+                    <p class="caption">Homepage</p>
+                    <div class="divider"></div>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+            <!--end container-->
+        </section>
+        <!-- END CONTENT -->
+
     </div>
+    <!-- END WRAPPER -->
+
+</div>
+<!-- END MAIN -->
+
 @endsection
 
 @section('js-loading')
     <script>
         jQuery( document ).ready(function(){
             jQuery(".button-collapse").sideNav();
-            jQuery('.dropdown-button').dropdown({
-                        hover: true, // Activate on hover
-                        constrain_width: false, // Does not change width of dropdown to that of the activator
-                        gutter: 10, // Spacing from edge
-                        belowOrigin: false // Displays dropdown below the button
-                    }
-            );
         })
     </script>
-    @endsection
+@endsection
