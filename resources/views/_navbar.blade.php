@@ -24,7 +24,7 @@
                 </ul>
                 <!--{% endif %}-->
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="/geldvoorelkaar/app/template/projects.php">Projecten</a></li>
+                    <li><a href="/projects">Projecten</a></li>
                     <li><a href="/geldvoorelkaar/app/template/settings.php">Instellingen</a></li>
                 </ul>
 
