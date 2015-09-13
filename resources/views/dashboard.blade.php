@@ -20,8 +20,12 @@
     <!-- start header nav-->
     <div class="navbar-fixed">
         <ul id="actions" class="dropdown-content">
-            <li><a href="#!">setting 1</a></li>
-            <li><a href="#!">setting 2</a></li>
+            <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a></li>
+            <li><a href="#"><i class="mdi-action-settings"></i> Settings12</a></li>
+            <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
+            <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
         </ul>
         <nav class="cyan">
             <div class="nav-wrapper">
@@ -58,7 +62,6 @@
                                     <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
                                 </ul>
                                 <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a>
-                                <p class="user-roal">Administrator</p>
                             </div>
                         </div>
                     </li>
@@ -304,7 +307,7 @@
             jQuery('.dropdown-button').dropdown({
                 hover: true, // Activate on hover
                 constrain_width: false, // Does not change width of dropdown to that of the activator
-                gutter: 10, // Spacing from edge
+                gutter: 0, // Spacing from edge
                 belowOrigin: true // Displays dropdown below the button
             });
         })
