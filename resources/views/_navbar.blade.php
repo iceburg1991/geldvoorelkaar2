@@ -35,27 +35,38 @@
                 <ul id="slide-out" class="side-nav">
                     <li class="user-details cyan darken-2">
                         <div class="row">
-                            <div class="col col s4 m4 l4">
-                                <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
-                            </div>
+                            @if ( isset(Auth::user()->name) )
+                                <div class="col col s4 m4 l4">
+                                    <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
+                                </div>
+                            @endif
                             <div class="col col s8 m8 l8">
-                                <ul id="profile-dropdown" class="dropdown-content">
-                                    <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a></li>
-                                    <li><a href="#"><i class="mdi-action-settings"></i> Settings</a></li>
-                                    <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
-                                    <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
-                                </ul>
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{-- Auth::user()->name or 'Inloggen'--}}<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                @if ( isset(Auth::user()->name) )
+                                    <ul id="profile-dropdown" class="dropdown-content">
+                                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a></li>
+                                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a></li>
+                                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
+                                        <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
+                                    </ul>
+                                @endif
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
+                                    @if ( isset(Auth::user()->name) )
+                                        {{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i>
+                                    @endif
+                                </a>
                             </div>
                         </div>
                     </li>
-                    <li><a href="/geldvoorelkaar"><i class="mdi-action-account-balance left"></i>Dashboard</a></li>
-                    <li><a href="/geldvoorelkaar/app/template/projects.php"><i class="mdi-action-assignment left"></i>Projecten</a></li>
-                    <div class="divider "></div>
-                    <li><a href="/geldvoorelkaar/app/template/settings.php"><i class="mdi-action-settings left"></i>Instellingen</a></li>
-
+                    @if ( isset(Auth::user()->name) )
+                        <li><a href="/geldvoorelkaar"><i class="mdi-action-account-balance left"></i>Dashboard</a></li>
+                        <li><a href="/geldvoorelkaar/app/template/projects.php"><i class="mdi-action-assignment left"></i>Projecten</a></li>
+                        <div class="divider "></div>
+                        <li><a href="/geldvoorelkaar/app/template/settings.php"><i class="mdi-action-settings left"></i>Instellingen</a></li>
+                    @else
+                        <li><a href="/auth/login">Inloggen</a></li>
+                    @endif
                 </ul>
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
