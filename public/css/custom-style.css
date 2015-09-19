@@ -2717,3 +2717,6 @@ nav .nav-wrapper li.profile ul li a {
 
   .navbar-fixed {
     height: 64px; } }
+.tabs .tab.disabled a {
+  color: #b2ebf2;
+  cursor: default; }

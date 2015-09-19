@@ -93,8 +93,6 @@ nav{
   }
 }
 
-
-
 @media #{$medium-and-up} {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, nav a.dropdown-button, nav a.dropdown-button i {
     height: $navbar-height;
@@ -103,4 +101,9 @@ nav{
   .navbar-fixed {
     height: $navbar-height;
   }
+}
+
+.tabs .tab.disabled a{
+  color: $primary-color-light;
+  cursor: default;
 }
