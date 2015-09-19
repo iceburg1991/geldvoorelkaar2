@@ -97,13 +97,20 @@ nav{
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, nav a.dropdown-button, nav a.dropdown-button i {
     height: $navbar-height;
     line-height: $navbar-height;
+    box-shadow: none;
   }
   .navbar-fixed {
     height: $navbar-height;
   }
 }
 
-.tabs .tab.disabled a{
-  color: $primary-color-light;
-  cursor: default;
+.tabs .tab a{
+  background-color: $primary-color;
+  color: white;
+}
+.row .tabpanel{
+  padding: 0px;
+  .tabs{
+    background-color: $primary-color;
+  }
 }

@@ -73,6 +73,18 @@
             </div>
         </nav>
     </div>
+    @if ( isset(Auth::user()->name) )
+        <div class="row">
+            <div class="col s12 tabpanel">
+                <ul class="tabs center">
+                    <li class="tab col s6 m2"><a class="active" href="#test1">Dashboard</a></li>
+                    <li class="tab col s6 m2"><a href="#test2">Projecten</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">@include("_dashboard")</div>
+            <div id="test2" class="col s12"><p class="caption">Projecten</p></div>
+        </div>
+        @endif
     <!-- end header nav-->
 </header>
 <!-- END HEADER -->
