@@ -1,6 +1,6 @@
 /*================================================================================
   Item Name: Materialize - Material Design Admin Template
-  Version: 2.2
+  Version: 2.3
   Author: GeeksLabs
   Author URL: http://www.themeforest.net/user/geekslabs
 ================================================================================*/
