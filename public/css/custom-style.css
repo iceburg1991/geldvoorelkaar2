@@ -2713,13 +2713,11 @@ nav .nav-wrapper li.profile ul li a {
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, nav a.dropdown-button, nav a.dropdown-button i {
     height: 64px;
-    line-height: 64px;
-    box-shadow: none; }
+    line-height: 64px; }
 
   .navbar-fixed {
     height: 64px; } }
 .tabs .tab a {
-  background-color: #00bcd4;
   color: white; }
 
 .row .tabpanel {
