@@ -74,7 +74,7 @@
         </nav>
     </div>
     @if ( isset(Auth::user()->name) )
-        <div class="row">
+        <div class="row hide-on-large-only">
             <div class="col s12 tabpanel">
                 <ul class="tabs center">
                     <li class="tab col s6 m2"><a class="active" href="#test1">Dashboard</a></li>
