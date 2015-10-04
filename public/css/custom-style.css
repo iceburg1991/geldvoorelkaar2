@@ -2717,3 +2717,10 @@ nav .nav-wrapper li.profile ul li a {
 
   .navbar-fixed {
     height: 64px; } }
+.tabs .tab a {
+  color: white; }
+
+.row .tabpanel {
+  padding: 0px; }
+  .row .tabpanel .tabs {
+    background-color: #00bcd4; }

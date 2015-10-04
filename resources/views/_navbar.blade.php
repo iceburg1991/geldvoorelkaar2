@@ -13,7 +13,7 @@
         <nav class="cyan">
             <div class="nav-wrapper">
 
-                <a href="/home" class="brand-logo center">Geldvoorelkaar</a>
+                <a href="/home" class="brand-logo center">@yield('title')</a>
 
                 <!--{% if settings %} -->
                 <ul class="right hide-on-med-and-down">
@@ -73,6 +73,16 @@
             </div>
         </nav>
     </div>
+    @if ( isset(Auth::user()->name) )
+        <div class="row hide-on-large-only">
+            <div class="col s12 tabpanel">
+                <ul class="tabs center">
+                    <li class="tab col s6 m2"><a class="active" href="#test1">Dashboard</a></li>
+                    <li class="tab col s6 m2"><a href="#test2">Projecten</a></li>
+                </ul>
+            </div>
+        </div>
+        @endif
     <!-- end header nav-->
 </header>
 <!-- END HEADER -->
