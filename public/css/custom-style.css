@@ -2724,3 +2724,10 @@ nav .nav-wrapper li.profile ul li a {
   padding: 0px; }
   .row .tabpanel .tabs {
     background-color: #00bcd4; }
+
+#projects-collection.highlight li:hover {
+  background-color: #f2f2f2;
+  cursor: pointer; }
+#projects-collection.highlight li:first-child:hover {
+  background-color: white;
+  cursor: default; }

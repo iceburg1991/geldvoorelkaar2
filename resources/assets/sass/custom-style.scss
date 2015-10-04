@@ -113,3 +113,19 @@ nav{
     background-color: $primary-color;
   }
 }
+
+//========================================
+//
+//  Projects page
+//
+//========================================
+#projects-collection.highlight {
+  li:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+  li:first-child:hover{
+    background-color: white;
+    cursor: default;
+  }
+}
