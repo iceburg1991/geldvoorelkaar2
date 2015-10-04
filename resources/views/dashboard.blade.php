@@ -1,7 +1,9 @@
+<?php $profit = -100; ?>
+
 @extends('master')
 
 
-@section('title','dashboard')
+@section('title','Dashboard')
 
 @section('content')
 
@@ -27,41 +29,85 @@
             <!--start container-->
             <div class="container">
                 <div class="section">
-                    <p class="caption">Dashboard</p>
-                    <div class="divider"></div>
 
-
-                    <div class="row">
-                        <div class="col s12 m6 l3">
-                            <div class="card">
-                                <div class="card-content  green white-text">
-                                    <p class="card-stats-title"><i class="mdi-social-group-add"></i> New Clients</p>
-                                    <h4 class="card-stats-number">566</h4>
-                                    <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 15% <span class="green-text text-lighten-5">from yesterday</span>
-                                    </p>
+                    <div id="card-stats">
+                        <div class="row">
+                            <div class="col s12 m6 l3">
+                            @if ( $profit < 0 )
+                                <div class="card red">
+                                    <div class="card-content white-text">
+                                        <p class="card-stats-title">Profit</p>
+                                        <h4 class="card-stats-number">€ {{ $profit }}</h4>
+                                    </div>
+                                    <div class="card-action  red darken-2">
+                                        <a href="/projects">Projects</a>
+                                    </div>
                                 </div>
-                                <div class="card-action  green darken-2">
-                                    <div id="clients-bar"></div>
+                            @else ( $profit > 0 )
+                                <div class="card green">
+                                    <div class="card-content white-text">
+                                        <p class="card-stats-title">Profit</p>
+                                        <h4 class="card-stats-number">€ {{ $profit }}</h4>
+                                    </div>
+                                    <div class="card-action green darken-2">
+                                        <a href="/projects">Projects</a>
+                                    </div>
+                                </div>
+                            @endif
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <div class="card purple">
+                                    <div class="card-content white-text">
+                                        <p class="card-stats-title">Invested</p>
+                                        <h4 class="card-stats-number">€423</h4>
+                                    </div>
+                                    <div class="card-action  purple darken-2">
+                                        <a href="/projects">Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <div class="card purple">
+                                    <div class="card-content white-text">
+                                        <p class="card-stats-title">To recieve</p>
+                                        <h4 class="card-stats-number">€423</h4>
+                                    </div>
+                                    <div class="card-action  purple darken-2">
+                                        <a href="/projects">Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <div class="card purple">
+                                    <div class="card-content white-text">
+                                        <p class="card-stats-title">Interest</p>
+                                        <h4 class="card-stats-number">5%</h4>
+                                    </div>
+                                    <div class="card-action  purple darken-2">
+                                        <a href="/projects">Projects</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 
 
                         <!--Morris Donut Chart-->
-                        <!--<div id="morris-donut-chart" class="section">
-                            <div class="row">-->
-                                <div class="col s12 m8 l9">
-                                    <div class="sample-chart-wrapper">
-                                        <div id="morris-donut" class="graph"></div>
+                        <!--<div id="morris-donut-chart" class="section">-->
+                            <div class="row">
+                                <div class="col s12 m6 l3">
+                                    <div class="card">
+                                        <div class="card-content center-align">
+                                            <span class="card-title black-text">Projects</span>
+                                            <div class="sample-chart-wrapper">
+                                                <div id="morris-donut" class="graph" style="height:150px;"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            <!--</div>
-                        </div>-->
-                    </div>
-
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+                            </div>
+                        <!--</div>-->
                 </div>
             </div>
             <!--end container-->
@@ -92,18 +138,8 @@
                     {label: "Zonnestudio", value: 30},
                     {label: "Sharkenergy", value: 20}
                 ],
+                resize: true,
                 formatter: function(y, data){ return (y + '%');}
-            });
-
-            jQuery("#clients-bar").sparkline([70, 80, 65, 78, 58, 80, 78, 80, 70, 50, 75, 65, 80, 70, 65, 90, 65, 80, 70, 65, 90], {
-                type: 'bar',
-                height: '25',
-                width: '100%',
-                barWidth: 10,
-                barSpacing: 4,
-                barColor: '#C7FCC9',
-                negBarColor: '#81d4fa',
-                zeroColor: '#81d4fa',
             });
         })
     </script>
