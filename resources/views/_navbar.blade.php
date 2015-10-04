@@ -13,7 +13,7 @@
         <nav class="cyan">
             <div class="nav-wrapper">
 
-                <a href="/home" class="brand-logo center">Geldvoorelkaar</a>
+                <a href="/home" class="brand-logo center">@yield('title')</a>
 
                 <!--{% if settings %} -->
                 <ul class="right hide-on-med-and-down">
@@ -81,8 +81,6 @@
                     <li class="tab col s6 m2"><a href="#test2">Projecten</a></li>
                 </ul>
             </div>
-            <div id="test1" class="col s12">@include("_dashboard")</div>
-            <div id="test2" class="col s12"><p class="caption">Projecten</p></div>
         </div>
         @endif
     <!-- end header nav-->
