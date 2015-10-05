@@ -15,12 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', ['middleware' => 'auth', function() {
-    return view('dashboard');
-}]);
-Route::get('projects', ['middleware' => 'auth', function()    {
-    return view('projects');
-}]);
+Route::get('home', 'DashboardController@index');
+Route::get('projects','ProjectsController@index');
+
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
