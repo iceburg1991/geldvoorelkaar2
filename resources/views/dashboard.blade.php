@@ -102,15 +102,30 @@
                                         <div class="move-up cyan darken-1">
                                             <div>
                                                 <span class="chart-title white-text">Revenue</span>
-                                                <div class="chart-revenue cyan darken-2 white-text">
+                                                <!--<div class="chart-revenue cyan darken-2 white-text">
                                                     <p class="chart-revenue-total">$4,500.85</p>
                                                     <p class="chart-revenue-per"><i class="mdi-navigation-arrow-drop-up"></i> 21.80 %</p>
-                                                </div>
-                                                <div class="switch chart-revenue-switch right">
+                                                </div>-->
+                                                <div class="switch chart-revenue-switch right" style="padding-top: 10px;">
                                                     <label class="cyan-text text-lighten-5">
-                                                        Month
-                                                        <input type="checkbox">
-                                                        <span class="lever"></span> Year
+                                                        <span>
+                                                            <input name="quarter" type="radio" id="test1" value="1"/>
+                                                            <label for="test1" class="white-text">Q1</label>
+                                                        </span>
+                                                        <span>
+                                                            <input name="quarter" type="radio" id="test2" value="2"/>
+                                                            <label for="test2" class="white-text">Q2</label>
+                                                        </span>
+                                                        <span>
+                                                            <input name="quarter" type="radio" id="test3" value="3"/>
+                                                            <label for="test3" class="white-text">Q3</label>
+                                                        </span>
+                                                        <span>
+                                                            <input name="quarter" type="radio" id="test4" value="4"/>
+                                                            <label for="test4" class="white-text">Q4</label>
+                                                        </span>
+                                                        <!--<input type="checkbox">
+                                                        <span class="lever"></span> Year-->
                                                     </label>
                                                 </div>
                                             </div>
@@ -192,7 +207,7 @@
             // Reloading Line Chart
             //==================================
             var data = {
-                labels : ["JAN","FEB","MAR","APR","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"],
+                labels : ["JAN","FEB","MAR"],
                 datasets : [
                     {
                         label: "First dataset",
@@ -202,7 +217,7 @@
                         pointStrokeColor : "#ffffff",
                         pointHighlightFill : "#ffffff",
                         pointHighlightStroke : "#ffffff",
-                        data: [1, 5, 2, 4, 8, 5, 8,3,6,1,9,5]
+                        data: [100, 435, 235]
                     }
                 ]
             };
@@ -214,7 +229,7 @@
                 scaleGridLineWidth: 1,//Number - Width of the grid lines
                 scaleShowHorizontalLines: true,//Boolean - Whether to show horizontal lines (except X axis)
                 scaleShowVerticalLines: false,//Boolean - Whether to show vertical lines (except Y axis)
-                bezierCurve: true,//Boolean - Whether the line is curved between points
+                bezierCurve: false,//Boolean - Whether the line is curved between points
                 bezierCurveTension: 0.4,//Number - Tension of the bezier curve between points
                 pointDot: true,//Boolean - Whether to show a dot for each point
                 pointDotRadius: 5,//Number - Radius of each point dot in pixels
@@ -246,23 +261,42 @@
                 responsive: true
             });
 
-            var nReloads = 0;
-            var min = 1;
-            var max = 12;
-            var l =0;
-            var trendingLineChart;
-            function update() {
-                nReloads++;
-
-                var x = Math.floor(Math.random() * (max - min + 1)) + min;
-                //var y = Math.floor(Math.random() * (max - min + 1)) + min;
-                window.trendingLineChart.addData([x], data.labels[l]);
-                window.trendingLineChart.removeData();
-                l++;
-                if( l == data.labels.length)
-                { l = 0;}
+            function showQuarter( quarter ){
+                if( quarter == 1 ){
+                    window.trendingLineChart.addData([75], "JAN");
+                    window.trendingLineChart.addData([335], "FEB");
+                    window.trendingLineChart.addData([125], "MAR");
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                }else if( quarter == 2 ){
+                    window.trendingLineChart.addData([500], "APR");
+                    window.trendingLineChart.addData([100], "MAY");
+                    window.trendingLineChart.addData([250], "JUNE");
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                }else if( quarter == 3 ){
+                    window.trendingLineChart.addData([50], "JULY");
+                    window.trendingLineChart.addData([135], "AUG");
+                    window.trendingLineChart.addData([445], "SEP");
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                } else if( quarter == 4 ){
+                    window.trendingLineChart.addData([645], "OCT");
+                    window.trendingLineChart.addData([135], "NOV");
+                    window.trendingLineChart.addData([245], "DEC");
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                    window.trendingLineChart.removeData();
+                }
             }
-            setInterval(update, 3000);
+            jQuery('input[name=quarter]').on('change', function(){
+                quarter = jQuery(this).val();
+                showQuarter( quarter );
+            });
+
             // ====================================
             // End line chart
             // ====================================
