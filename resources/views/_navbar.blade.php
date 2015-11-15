@@ -19,7 +19,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li class="profile">
                         @if ( isset(Auth::user()->name) )
-                            <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image right" />
+                            <img src="/images/avatar.jpg" alt="" class="circle responsive-img valign profile-image right" />
                             <a href="#!" class="dropdown-button" data-activates="actions">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
                         @else
                             <li><a href="/auth/login">Inloggen</a></li>
@@ -37,7 +37,7 @@
                         <div class="row">
                             @if ( isset(Auth::user()->name) )
                                 <div class="col col s4 m4 l4">
-                                    <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
+                                    <img src="/images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
                                 </div>
                             @endif
                             <div class="col col s8 m8 l8">

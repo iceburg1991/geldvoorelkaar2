@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('home', 'DashboardController@index');
-Route::get('projects','ProjectsController@index');
+Route::resource('projects', 'ProjectController');
 
 
 // Authentication routes...
