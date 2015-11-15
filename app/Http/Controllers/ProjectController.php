@@ -80,7 +80,7 @@ class ProjectController extends Controller
     {
         $project = Project::find($id);
 
-        return View::make('projects.show')
+        return \View::make('projects.show')
             ->with('project', $project);
     }
 
@@ -108,14 +108,11 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
         $rules = array(
             'name'       => 'required',
         );
         $validator = \Validator::make(\Input::all(), $rules);
 
-        // process the login
         if ($validator->fails()) {
             return \Redirect::to('projects/' . $id . '/edit')
                 ->withErrors($validator)
@@ -127,7 +124,7 @@ class ProjectController extends Controller
             $project->save();
 
             // redirect
-            \Session::flash('message', 'Successfully updated nerd!');
+            \Session::flash('message', 'Successfully updated project!');
             return \Redirect::to('projects');
         }
     }
@@ -140,6 +137,11 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        $project->delete();
+
+        // redirect
+        \Session::flash('message', 'Successfully deleted the project!');
+        return \Redirect::to('projects');
     }
 }

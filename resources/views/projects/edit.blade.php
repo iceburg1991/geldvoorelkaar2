@@ -1,7 +1,7 @@
 @extends('master')
 
 
-@section('title','Projects')
+@section('title','Project bewerken')
 
 @section('content')
 

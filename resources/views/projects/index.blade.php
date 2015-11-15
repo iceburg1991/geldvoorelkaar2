@@ -14,24 +14,6 @@
 
         <!-- START CONTENT -->
         <section id="content">
-
-            <!--breadcrumbs start-->
-            <div id="breadcrumbs-wrapper" class=" grey lighten-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <!--<h5 class="breadcrumbs-title">Projects</h5>-->
-                            <ol class="breadcrumb">
-                                <li><a href="/home">Dashboard</a></li>
-                                <li class="active">Projects</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--breadcrumbs end-->
-
-
             <!--start container-->
             <div class="container">
                 <div class="section">
@@ -47,19 +29,25 @@
                                         <p>All Geldvoorelkaar projects</p>
                                     </li>
                                     @foreach( $projects as $project)
-                                    <li class="collection-item" onclick="window.open('/projects/'+ '{{ $project->id }}' + '/edit');">
+                                    <li class="collection-item" onclick="window.open('/projects/'+ '{{ $project->id }}' ,'_self');">
                                         <div class="row">
-                                            <div class="col s6">
+                                            <div class="col s4">
                                                 <p class="collections-title">{!! $project->name !!}</p>
                                                 <p class="collections-content">Start date</p>
                                             </div>
-                                            <div class="col s3">
+                                            <div class="col s2">
                                                 <span class="task-cat red">Invested</span>
                                                 <span>Amount</span>
                                             </div>
-                                            <div class="col s3">
+                                            <div class="col s2">
                                                 <span class="task-cat green">Interest</span>
                                                 <span id="project-line-1">Amount</span>
+                                            </div>
+                                            <div class="col s2">
+                                                {!! Form::open(array('url' => 'projects/' . $project->id, 'class' => 'pull-right')) !!}
+                                                {!! Form::hidden('_method', 'DELETE') !!}
+                                                {!! Form::submit('Delete', array('class' => 'btn btn-warning')) !!}
+                                                {!! Form::close() !!}
                                             </div>
                                         </div>
                                     </li>
@@ -68,21 +56,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="row">
-                        <div class="col s12 m8 l9">
-                            <div class="collection">
-                                <a href="#!" class="collection-item">Alvin</a>
-                                <a href="#!" class="collection-item active">Alvin</a>
-                                <a href="#!" class="collection-item">Alvin</a>
-                                <a href="#!" class="collection-item">Alvin</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    
                 </div>
             </div>
             <!--end container-->
@@ -95,4 +69,12 @@
 </div>
 <!-- END MAIN -->
 
+@endsection
+
+@section('js-loading')
+    @if(Session::has('message'))
+        <script>
+            Materialize.toast( '{!! Session::get("message") !!}', 4000);
+        </script>
+    @endif
 @endsection

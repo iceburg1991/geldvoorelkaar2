@@ -1,7 +1,7 @@
 @extends('master')
 
 
-@section('title','Projects')
+@section('title', $project->name )
 
 @section('content')
 
@@ -11,32 +11,19 @@
 <div id="main">
     <!-- START WRAPPER -->
     <div class="wrapper">
-
         <!-- START CONTENT -->
         <section id="content">
-
-            <!--breadcrumbs start-->
-            <div id="breadcrumbs-wrapper" class=" grey lighten-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <!--<h5 class="breadcrumbs-title">Projects</h5>-->
-                            <ol class="breadcrumb">
-                                <li><a href="/home">Dashboard</a></li>
-                                <li class="active">Projects</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--breadcrumbs end-->
-
-
             <!--start container-->
             <div class="container">
                 <div class="section">
-
-
+                    <a href="/projects/{!! $project->id !!}/edit" class="btn-floating btn-large waves-effect waves-light red right" style=""><i class="mdi-editor-mode-edit">edit</i></a>
+                    <div class="jumbotron text-center">
+                        <p>
+                            @foreach($project['attributes'] as $key => $value)
+                                <strong>{{ $key }}:</strong> {{ $value }}<br />
+                            @endforeach
+                        </p>
+                    </div>
                 </div>
             </div>
             <!--end container-->
