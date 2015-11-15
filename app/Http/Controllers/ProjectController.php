@@ -2,16 +2,21 @@
 
 namespace Geldvoorelkaar\Http\Controllers;
 
+use Geldvoorelkaar\Project;
 use Illuminate\Http\Request;
 
 use Geldvoorelkaar\Http\Requests;
 use Geldvoorelkaar\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
-    public function __construct()
+    protected $project;
+
+    public function __construct(Project $project)
     {
         $this->middleware('auth');
+        $this->project = $project;
     }
 
     /**
@@ -21,7 +26,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('projects');
+        $projects = Project::all();
+        return view('projects.index',compact('projects'));
     }
 
     /**
@@ -31,7 +37,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('project.create');
+        return view('projects.create');
     }
 
     /**
@@ -42,7 +48,26 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = array(
+            'name'       => 'required',
+        );
+        $validator = \Validator::make(\Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return \Redirect::to('projects/create')
+                ->withErrors($validator)
+                ->withInput(\Input::except('password'));
+        } else {
+            // store
+            $project = new Project;
+            $project->name = \Input::get('name');
+            $project->save();
+
+            // redirect
+            \Session::flash('message', 'Successfully created project!');
+            return \Redirect::to('projects');
+        }
     }
 
     /**
