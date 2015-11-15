@@ -36,6 +36,20 @@
             <div class="container">
                 <div class="section">
 
+                    <h1>Edit {{ $project->name }}</h1>
+
+                    {{ Html::ul($errors->all()) }}
+
+                    {!! Form::model($project, array('route' => array('projects.update', $project->id), 'method' => 'PUT')) !!}
+
+                    <div class="form-group">
+                        {!! Form::label('name', 'Name') !!}
+                        {!! Form::text('name', null, array('class' => 'form-control')) !!}
+                    </div>
+
+                    {!! Form::submit('Edit the Project!', array('class' => 'btn btn-primary')) !!}
+
+                    {!! Form::close() !!}
 
                 </div>
             </div>

@@ -78,7 +78,10 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::find($id);
+
+        return View::make('projects.show')
+            ->with('project', $project);
     }
 
     /**
@@ -89,7 +92,11 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+
+        // show the edit form and pass the nerd
+        return \View::make('projects.edit')
+            ->with('project', $project);
     }
 
     /**
@@ -101,7 +108,28 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'name'       => 'required',
+        );
+        $validator = \Validator::make(\Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return \Redirect::to('projects/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(\Input::except('password'));
+        } else {
+            // store
+            $project = Project::find($id);
+            $project->name       = \Input::get('name');
+            $project->save();
+
+            // redirect
+            \Session::flash('message', 'Successfully updated nerd!');
+            return \Redirect::to('projects');
+        }
     }
 
     /**

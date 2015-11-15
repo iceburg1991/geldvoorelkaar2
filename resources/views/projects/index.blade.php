@@ -47,7 +47,7 @@
                                         <p>All Geldvoorelkaar projects</p>
                                     </li>
                                     @foreach( $projects as $project)
-                                    <li class="collection-item" onclick="window.open('/home');">
+                                    <li class="collection-item" onclick="window.open('/projects/'+ '{{ $project->id }}' + '/edit');">
                                         <div class="row">
                                             <div class="col s6">
                                                 <p class="collections-title">{!! $project->name !!}</p>
