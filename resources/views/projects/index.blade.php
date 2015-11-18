@@ -37,7 +37,7 @@
                                             </div>
                                             <div class="col s2">
                                                 <span class="task-cat red">Invested</span>
-                                                <span>Amount</span>
+                                                <span>€ {{ $project->invested }}</span>
                                             </div>
                                             <div class="col s2">
                                                 <span class="task-cat green">Interest</span>

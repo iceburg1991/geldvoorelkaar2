@@ -53,18 +53,15 @@ class ProjectController extends Controller
         );
         $validator = \Validator::make(\Input::all(), $rules);
 
-        // process the login
         if ($validator->fails()) {
             return \Redirect::to('projects/create')
                 ->withErrors($validator)
                 ->withInput(\Input::except('password'));
         } else {
-            // store
             $project = new Project;
             $project->name = \Input::get('name');
             $project->save();
 
-            // redirect
             \Session::flash('message', 'Successfully created project!');
             return \Redirect::to('projects');
         }
@@ -109,21 +106,28 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $rules = array(
-            'name'       => 'required',
+            'name'      => 'required',
+            'invested'  => 'regex:/^\$?([0-9]{1,3}.([0-9]{3},)*[0-9]+)(,[0-9][0-9])?$/'  // /^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/',    // /^[0-9]+(\\.[0-9]+)?$/'
         );
         $validator = \Validator::make(\Input::all(), $rules);
 
+        $pos = strpos(\Input::get('invested'), ",");
+        $value = "";
+        if( $pos != false ){
+            $value = str_replace(',','.', str_replace('.','', \Input::get('invested') ) );
+        }
+        else{
+        }
         if ($validator->fails()) {
             return \Redirect::to('projects/' . $id . '/edit')
                 ->withErrors($validator)
                 ->withInput(\Input::except('password'));
         } else {
-            // store
             $project = Project::find($id);
-            $project->name       = \Input::get('name');
+            $project->name      = \Input::get('name');
+            $project->invested  = $value;
             $project->save();
 
-            // redirect
             \Session::flash('message', 'Successfully updated project!');
             return \Redirect::to('projects');
         }

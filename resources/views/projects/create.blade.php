@@ -48,7 +48,10 @@
                     @endif
 
                     {!! Form::open(array('url' => array('projects'))) !!}
-                        {!! Form::text('name','naam van het project') !!}
+                        <div class="form-group">
+                            {!! Form::label('name', 'Name') !!}
+                            {!! Form::text('name',null,array('placeholder'=>'naam van het project')) !!}
+                        </div>
                         {!! Form::submit('Click Me!', array('class' => 'btn btn-primary')) !!}
                     {!! Form::close() !!}
                 </div>
