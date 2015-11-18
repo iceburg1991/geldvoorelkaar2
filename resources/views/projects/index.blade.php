@@ -24,7 +24,7 @@
                                 <ul id="projects-collection" class="collection highlight">
                                     <li class="collection-item avatar">
                                         <i class="mdi-file-folder circle light-blue"></i>
-                                        <span class="collection-header">Projects</span>
+                                        <span class="collection-header">@lang('project.projects')</span>
                                         <a href="/projects/create" class="btn-floating btn-large waves-effect waves-light red right" style="top:28px;right:-15px;"><i class="mdi-content-add">add</i></a>
                                         <p>All Geldvoorelkaar projects</p>
                                     </li>

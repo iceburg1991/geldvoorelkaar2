@@ -52,6 +52,10 @@
                             {!! Form::label('name', 'Name') !!}
                             {!! Form::text('name',null,array('placeholder'=>'naam van het project')) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('invested', 'Geïnvesteerd') !!}
+                            {!! Form::text('invested',null,array('placeholder'=>"Geïnvesteerd bedrag e.g. '100,25', '10.000,50' ")) !!}
+                        </div>
                         {!! Form::submit('Click Me!', array('class' => 'btn btn-primary')) !!}
                     {!! Form::close() !!}
                 </div>

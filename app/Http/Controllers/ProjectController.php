@@ -53,13 +53,22 @@ class ProjectController extends Controller
         );
         $validator = \Validator::make(\Input::all(), $rules);
 
+        $pos = strpos(\Input::get('invested'), ",");
+        $value = "";
+        if( $pos != false ){
+            $value = str_replace(',','.', str_replace('.','', \Input::get('invested') ) );
+        }
+        else{
+            $value = \Input::get('invested');
+        }
+
+
         if ($validator->fails()) {
-            return \Redirect::to('projects/create')
-                ->withErrors($validator)
-                ->withInput(\Input::except('password'));
+            return \Redirect::to('projects/create')->withErrors($validator)->withInput(\Input::except('password'));
         } else {
             $project = new Project;
             $project->name = \Input::get('name');
+            $project->invested = $value;
             $project->save();
 
             \Session::flash('message', 'Successfully created project!');
@@ -117,6 +126,7 @@ class ProjectController extends Controller
             $value = str_replace(',','.', str_replace('.','', \Input::get('invested') ) );
         }
         else{
+            $value = \Input::get('invested');
         }
         if ($validator->fails()) {
             return \Redirect::to('projects/' . $id . '/edit')

@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->double('invested');
             $table->timestamp('start_investing');
-            $table->timestamp('end_investing');
+            $table->timestamp('duration');
             $table->integer('interest');
             $table->timestamps();
         });
