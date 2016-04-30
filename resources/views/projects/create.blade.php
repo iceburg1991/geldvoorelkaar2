@@ -56,6 +56,12 @@
                             {!! Form::label('invested', 'Geïnvesteerd') !!}
                             {!! Form::text('invested',null,array('placeholder'=>"Geïnvesteerd bedrag e.g. '100,25', '10.000,50' ")) !!}
                         </div>
+                        <div class="row">
+                            <div class="form-group col l2">
+                                {!! Form::label('duration', 'Looptijd in maanden') !!}
+                                {!! Form::number('duration',null,array('class'=>'validate')) !!}
+                            </div>
+                        </div>
                         {!! Form::submit('Click Me!', array('class' => 'btn btn-primary')) !!}
                     {!! Form::close() !!}
                 </div>

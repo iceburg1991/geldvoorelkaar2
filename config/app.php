@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Amsterdam',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,6 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Casinelli\Currency\CurrencyServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -145,7 +146,6 @@ return [
         Geldvoorelkaar\Providers\EventServiceProvider::class,
         Geldvoorelkaar\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
     ],
 
     /*
@@ -170,6 +170,7 @@ return [
         'Config'    => Illuminate\Support\Facades\Config::class,
         'Cookie'    => Illuminate\Support\Facades\Cookie::class,
         'Crypt'     => Illuminate\Support\Facades\Crypt::class,
+        'Currency'  => Casinelli\Currency\Facades\Currency::class,
         'DB'        => Illuminate\Support\Facades\DB::class,
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
         'Event'     => Illuminate\Support\Facades\Event::class,

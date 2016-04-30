@@ -4,9 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5727d5ec61bdee91f31ffa4b1fc26b5b",
-    "content-hash": "5d22a10ef0e9bc3fa61e71aa29b24879",
+    "hash": "b0a8b835a0766660c5e64b352a9c8484",
+    "content-hash": "fe6de3bf63773ac278120c9b6a1ac2c1",
     "packages": [
+        {
+            "name": "casinelli/currency",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Casinelli/Currency.git",
+                "reference": "0e0029294a02cfd898ad775583b78b6b775fa76c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Casinelli/Currency/zipball/0e0029294a02cfd898ad775583b78b6b775fa76c",
+                "reference": "0e0029294a02cfd898ad775583b78b6b775fa76c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~5.0",
+                "illuminate/support": "~5.0",
+                "illuminate/view": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Casinelli\\Currency": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Giovanni Casinelli",
+                    "email": "giovanni.casinelli@gmail.com"
+                }
+            ],
+            "description": "Handles currency for Laravel 5.",
+            "keywords": [
+                "currency",
+                "exchange rate",
+                "laravel",
+                "laravel5",
+                "money"
+            ],
+            "time": "2016-02-28 07:40:07"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",

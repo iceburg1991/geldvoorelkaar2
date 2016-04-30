@@ -85,9 +85,17 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::find($id);
-
-        return \View::make('projects.show')
-            ->with('project', $project);
+        $interest_yearly_percentage = 9;
+        $interest_monthly_percentage = pow(1 + ($interest_yearly_percentage/100), 1/12) -1;
+        //$investment = preg_replace('/[^A-Za-z0-9\-.,]/', '', $project['Investering'] );
+        $looptijd = 60;
+        $investment = $project['invested'];
+        $project['invested'] = \Currency::format($project['invested']);
+        $interest_montly = round(
+            ($interest_monthly_percentage/(1-pow((1+$interest_monthly_percentage),-$looptijd)))
+            * str_replace(",",".",str_replace(".","",$investment)), 2);
+        $project['interest_monthly'] = $interest_montly;
+        return view('projects.show', ['project'=>$project]);
     }
 
     /**
