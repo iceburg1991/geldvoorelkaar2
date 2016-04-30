@@ -15,6 +15,10 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->double('invested');
+            $table->timestamp('start_investing');
+            $table->timestamp('duration');
+            $table->integer('interest');
             $table->timestamps();
         });
     }

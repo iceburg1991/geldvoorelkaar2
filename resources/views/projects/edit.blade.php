@@ -38,7 +38,7 @@
 
                     <h1>Edit {{ $project->name }}</h1>
 
-                    {{ Html::ul($errors->all()) }}
+                    {!! Html::ul($errors->all()) !!}
 
                     {!! Form::model($project, array('route' => array('projects.update', $project->id), 'method' => 'PUT')) !!}
 
@@ -46,7 +46,10 @@
                         {!! Form::label('name', 'Name') !!}
                         {!! Form::text('name', null, array('class' => 'form-control')) !!}
                     </div>
-
+                    <div class="form-group">
+                        {!! Form::label('invested', 'Invested') !!}
+                        {!! Form::text('invested') !!}
+                    </div>
                     {!! Form::submit('Edit the Project!', array('class' => 'btn btn-primary')) !!}
 
                     {!! Form::close() !!}

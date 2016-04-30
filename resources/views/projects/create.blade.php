@@ -48,7 +48,20 @@
                     @endif
 
                     {!! Form::open(array('url' => array('projects'))) !!}
-                        {!! Form::text('name','naam van het project') !!}
+                        <div class="form-group">
+                            {!! Form::label('name', 'Name') !!}
+                            {!! Form::text('name',null,array('placeholder'=>'naam van het project')) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('invested', 'Geïnvesteerd') !!}
+                            {!! Form::text('invested',null,array('placeholder'=>"Geïnvesteerd bedrag e.g. '100,25', '10.000,50' ")) !!}
+                        </div>
+                        <div class="row">
+                            <div class="form-group col l2">
+                                {!! Form::label('duration', 'Looptijd in maanden') !!}
+                                {!! Form::number('duration',null,array('class'=>'validate')) !!}
+                            </div>
+                        </div>
                         {!! Form::submit('Click Me!', array('class' => 'btn btn-primary')) !!}
                     {!! Form::close() !!}
                 </div>
