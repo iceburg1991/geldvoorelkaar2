@@ -58,8 +58,8 @@
                         </div>
                         <div class="row">
                             <div class="form-group col l2">
-                                {!! Form::label('duration', 'Looptijd in maanden') !!}
-                                {!! Form::number('duration',null,array('class'=>'validate')) !!}
+                                {!! Form::label('duration_months', 'Looptijd in maanden') !!}
+                                {!! Form::number('duration_months',null,array('class'=>'validate')) !!}
                             </div>
                         </div>
                         {!! Form::submit('Click Me!', array('class' => 'btn btn-primary')) !!}
