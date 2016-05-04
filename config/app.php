@@ -146,6 +146,7 @@ return [
         Geldvoorelkaar\Providers\EventServiceProvider::class,
         Geldvoorelkaar\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        LaravelDoctrine\ORM\DoctrineServiceProvider::class,
     ],
 
     /*
@@ -173,6 +174,7 @@ return [
         'Currency'  => Casinelli\Currency\Facades\Currency::class,
         'DB'        => Illuminate\Support\Facades\DB::class,
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
+        'EntityManager' => LaravelDoctrine\ORM\Facades\EntityManager::class,
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
         'Form'      => Collective\Html\FormFacade::class,

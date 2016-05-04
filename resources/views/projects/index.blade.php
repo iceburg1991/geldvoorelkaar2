@@ -4,8 +4,13 @@
 @section('title','Projects')
 
 @section('content')
+    <link href="http://cdn.datatables.net/1.10.6/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-@include('_navbar')
+    @include('_navbar')
 
         <!-- START MAIN -->
 <div id="main">
@@ -16,6 +21,77 @@
         <section id="content">
             <!--start container-->
             <div class="container">
+
+
+
+                <div class="section">
+                    <!--DataTables example-->
+                    <div id="table-datatables">
+                        <h4 class="header">DataTables example</h4>
+                        <div class="row">
+                            <div class="col s12 m8 l9">
+                                <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Invested</th>
+                                        <th>Interest yearly</th>
+                                        <th>Monthly</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Invested</th>
+                                        <th>Interest yearly</th>
+                                        <th>Monthly</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                    </tfoot>
+
+                                    <tbody>
+                                    @foreach( $projects as $project)
+                                    <tr>
+                                        <td>{{ $project->name }}</td>
+                                        <td>{{ Currency::format($project->invested) }}</td>
+                                        <td>{{ $project->interest }}%</td>
+                                        <td>{{ Currency::format($project->InterestMonthly()) }}</td>
+                                        <td>{{ $project->start_date }}</td>
+                                        <td>$320,800</td>
+                                    </tr>
+                                    @endforeach
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="section">
 
                     <div id="work-collections">
@@ -72,6 +148,9 @@
 @endsection
 
 @section('js-loading')
+
+    <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
     @if(Session::has('message'))
         <script>
             Materialize.toast( '{!! Session::get("message") !!}', 4000);
