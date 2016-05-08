@@ -2,12 +2,15 @@
 
 namespace Geldvoorelkaar\Http\Controllers;
 
+use Carbon\Carbon;
 use Geldvoorelkaar\Project;
 use Illuminate\Http\Request;
 
 use Geldvoorelkaar\Http\Requests;
 use Geldvoorelkaar\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -70,6 +73,7 @@ class ProjectController extends Controller
             $project->name = \Input::get('name');
             $project->invested = $value;
             $project->duration_months = \Input::get('duration_months');
+            $project->interest = \Input::get('interest');
             $project->save();
 
             \Session::flash('message', 'Successfully created project!');
@@ -166,5 +170,25 @@ class ProjectController extends Controller
         // redirect
         \Session::flash('message', 'Successfully deleted the project!');
         return \Redirect::to('projects');
+    }
+
+
+    /**
+     * Calculates the expected date that the project will end.
+     * Only translated month and year are returned.
+     * @param Request $request
+     * @return mixed
+     */
+    public function expectedEnd(Request $request){
+        $month = Input::get('start_month');
+        $year = intval(Input::get('start_year'));
+        $date = Carbon::create($year, $month);
+        $newDate = $date->addMonths(intval(Input::get('duration')));
+        $newDateMonth = trans('months.'.$newDate->format('F'));
+        $newDateYear = $newDate->format('Y');
+        return json_encode(array(
+                "month" => $newDateMonth,
+                "year" => $newDateYear
+        ));
     }
 }

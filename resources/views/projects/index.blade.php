@@ -36,6 +36,7 @@
                                         <th>Name</th>
                                         <th>Invested</th>
                                         <th>Interest yearly</th>
+                                        <th>Duration in months</th>
                                         <th>Monthly</th>
                                         <th>Start date</th>
                                         <th>Salary</th>
@@ -47,6 +48,7 @@
                                         <th>Name</th>
                                         <th>Invested</th>
                                         <th>Interest yearly</th>
+                                        <th>Duration in months</th>
                                         <th>Monthly</th>
                                         <th>Start date</th>
                                         <th>Salary</th>
@@ -59,6 +61,7 @@
                                         <td>{{ $project->name }}</td>
                                         <td>{{ Currency::format($project->invested) }}</td>
                                         <td>{{ $project->interest }}%</td>
+                                        <td>{{ $project->duration_months }}</td>
                                         <td>{{ Currency::format($project->InterestMonthly()) }}</td>
                                         <td>{{ $project->start_date }}</td>
                                         <td>$320,800</td>
