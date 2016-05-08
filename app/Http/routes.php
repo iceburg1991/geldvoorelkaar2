@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('home', 'DashboardController@index');
+Route::post('project/expected_end', 'ProjectController@expectedEnd');
 Route::resource('projects', 'ProjectController');
 
 
