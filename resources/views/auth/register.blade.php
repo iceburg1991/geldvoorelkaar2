@@ -65,7 +65,7 @@
             <div class="row margin">
                 <div class="input-field col s12">
                     <i class="mdi-social-person-outline prefix"></i>
-                    <input id="username" type="text" >
+                    <input id="username" type="text" name="name" >
                     <label for="username" class="center-align">Username</label>
                     @if ($errors->has('name'))
                         <span class="help-block">
