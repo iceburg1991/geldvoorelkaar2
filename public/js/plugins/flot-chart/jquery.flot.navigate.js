@@ -96,7 +96,7 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
  * Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
  * Thanks to: Seamus Leahy for adding deltaX and deltaY
  *
- * Version: 3.0.6
+ * Version: 3.1.6
  *
  * Requires: 1.2.2+
  */

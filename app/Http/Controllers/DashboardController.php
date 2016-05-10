@@ -1,6 +1,6 @@
 <?php
 
-namespace Geldvoorelkaar\Http\Controllers;
+namespace App\Http\Controllers;
 
 
 class DashboardController extends Controller

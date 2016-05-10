@@ -10,11 +10,11 @@
         @include('footer')
 
                 <!-- jQuery Library -->
-        <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery-1.11.2.min.js"></script>
         <!--materialize js-->
         <script type="text/javascript" src="/js/materialize.js"></script>
         <!--prism-->
-        <script type="text/javascript" src="/js/prism.js"></script>
+        <script type="text/javascript" src="/js/plugins/prism/prism.js"></script>
         <!--scrollbar-->
         <script type="text/javascript" src="/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
         <!-- chartist -->

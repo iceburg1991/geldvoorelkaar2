@@ -264,7 +264,7 @@
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <!-- morris -->
-    <script type="text/javascript" src="js/raphael-min.js"></script>
+    <script type="text/javascript" src="js/plugins/raphael-min.js"></script>
     <!--<script type="text/javascript" src="js/plugins/morris-chart/morris.min.js"></script>-->
     <!-- sparkline -->
     <script type="text/javascript" src="js/plugins/sparkline/jquery.sparkline.min.js"></script>

@@ -1,13 +1,13 @@
 <?php
 
-namespace Geldvoorelkaar\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Geldvoorelkaar\Project;
+use App\Project;
 use Illuminate\Http\Request;
 
-use Geldvoorelkaar\Http\Requests;
-use Geldvoorelkaar\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
