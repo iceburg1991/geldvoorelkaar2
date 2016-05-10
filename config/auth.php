@@ -59,7 +59,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Geldvoorelkaar\User::class,
+            'model' => App\User::class,
         ],
         // 'users' => [
         //     'driver' => 'database',

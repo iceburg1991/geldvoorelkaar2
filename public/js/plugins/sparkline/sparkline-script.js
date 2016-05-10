@@ -1,15 +1,17 @@
 // Bar chart ( New Clients)
-$("#clients-bar").sparkline([70, 80, 65, 78, 58, 80, 78, 80, 70, 50, 75, 65, 80, 70, 65, 90, 65, 80, 70, 65, 90], {
-    type: 'bar',
-    height: '25',
-    width: '100%',
-    barWidth: 10,
-    barSpacing: 4,
-    barColor: '#C7FCC9',
-    negBarColor: '#81d4fa',
-    zeroColor: '#81d4fa',
-    //tooltipFormat: $.spformat('{{value}}', 'tooltip-class')
-});
+
+    $("#clients-bar").sparkline([70, 80, 65, 78, 58, 80, 78, 80, 70, 50, 75, 65, 80, 70, 65, 90, 65, 80, 70, 65, 90], {
+        type: 'bar',
+        height: '25',
+        barWidth: 7,
+        barSpacing: 4,
+        barColor: '#C7FCC9',
+        negBarColor: '#81d4fa',
+        zeroColor: '#81d4fa',
+    });
+
+//clientsBar.setOptions({chartArea: {width: 100}});
+
 
 // Line chart ( New Invoice)
 $("#invoice-line").sparkline([5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7, 5, 6, 7, 9, 9, 5], {
@@ -37,7 +39,7 @@ $("#profit-tristate").sparkline([2, 3, 0, 4, -5, -6, 7, -2, 3, 0, 2, 3, -1, 0, 2
     height: '25',
     posBarColor: '#B9DBEC',
     negBarColor: '#C7EBFC',
-    barWidth: 10,
+    barWidth: 7,
     barSpacing: 4,
     zeroAxis: false,
     //tooltipFormat: $.spformat('{{value}}', 'tooltip-class')
@@ -49,7 +51,7 @@ $('#sales-compositebar').sparkline([4, 6, 7, 7, 4, 3, 2, 3, 1, 4, 6, 5, 9, 4, 6,
     barColor: '#F6CAFD',
     height: '25',
     width: '100%',
-    barWidth: '10',
+    barWidth: '7',
     barSpacing: 2,
     //tooltipFormat: $.spformat('{{value}}', 'tooltip-class')
 });

@@ -17,15 +17,13 @@
 
 
     <!-- CORE CSS-->
+
     <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-    <!-- Custom CSS-->
-    <link href="/css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <!-- CSS for full screen (Layout-2)-->
-    <link href="/css/style-fullscreen.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->
+    <link href="/css/layouts/style-fullscreen.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="/css/custom/custom.css" type="text/css" rel="stylesheet" media="screen,projection">
 
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-    <link href="/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">

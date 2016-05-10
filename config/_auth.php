@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => Geldvoorelkaar\User::class,
+    'model' => App\User::class,
 
     /*
     |--------------------------------------------------------------------------
