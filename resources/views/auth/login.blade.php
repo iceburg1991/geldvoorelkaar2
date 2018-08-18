@@ -54,7 +54,7 @@
 
 <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-        <form class="login-form" method="POST" action="/auth/login">
+        <form class="login-form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
             <div class="row">
                 <div class="input-field col s12 center">
@@ -89,7 +89,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s6 m6 l6">
-                    <p class="margin medium-small"><a href="/auth/register">Register Now!</a></p>
+                    <p class="margin medium-small"><a href="{{ url('/register') }}">Register Now!</a></p>
                 </div>
                 <div class="input-field col s6 m6 l6">
                     <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>

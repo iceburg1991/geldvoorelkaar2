@@ -54,26 +54,26 @@ class ProjectController extends Controller
         $rules = array(
             'name'       => 'required',
         );
-        $validator = \Validator::make(\Input::all(), $rules);
+        $validator = \Validator::make($request->all(), $rules);
 
-        $pos = strpos(\Input::get('invested'), ",");
+        $pos = strpos($request->input('invested'), ",");
         $value = "";
         if( $pos != false ){
-            $value = str_replace(',','.', str_replace('.','', \Input::get('invested') ) );
+            $value = str_replace(',','.', str_replace('.','', $request->input('invested') ) );
         }
         else{
-            $value = \Input::get('invested');
+            $value = $request->input('invested');
         }
 
 
         if ($validator->fails()) {
-            return \Redirect::to('projects/create')->withErrors($validator)->withInput(\Input::except('password'));
+            return \Redirect::to('projects/create')->withErrors($validator)->withInput($request->except('password'));
         } else {
             $project = new Project;
-            $project->name = \Input::get('name');
+            $project->name = $request->input('name');
             $project->invested = $value;
-            $project->duration_months = \Input::get('duration_months');
-            $project->interest = \Input::get('interest');
+            $project->duration_months = $request->input('duration_months');
+            $project->interest = $request->input('interest');
             $project->save();
 
             \Session::flash('message', 'Successfully created project!');
@@ -131,23 +131,23 @@ class ProjectController extends Controller
             'name'      => 'required',
             'invested'  => 'regex:/^\$?([0-9]{1,3}.([0-9]{3},)*[0-9]+)(,[0-9][0-9])?$/'  // /^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/',    // /^[0-9]+(\\.[0-9]+)?$/'
         );
-        $validator = \Validator::make(\Input::all(), $rules);
+        $validator = \Validator::make($request->all(), $rules);
 
-        $pos = strpos(\Input::get('invested'), ",");
+        $pos = strpos($request->input('invested'), ",");
         $value = "";
         if( $pos != false ){
-            $value = str_replace(',','.', str_replace('.','', \Input::get('invested') ) );
+            $value = str_replace(',','.', str_replace('.','', $request->input('invested') ) );
         }
         else{
-            $value = \Input::get('invested');
+            $value = $request->input('invested');
         }
         if ($validator->fails()) {
             return \Redirect::to('projects/' . $id . '/edit')
                 ->withErrors($validator)
-                ->withInput(\Input::except('password'));
+                ->withInput($request->except('password'));
         } else {
             $project = Project::find($id);
-            $project->name      = \Input::get('name');
+            $project->name      = $request->input('name');
             $project->invested  = $value;
             $project->save();
 

@@ -59,10 +59,10 @@
                                     @foreach( $projects as $project)
                                     <tr>
                                         <td>{{ $project->name }}</td>
-                                        <td>{{ Currency::format($project->invested) }}</td>
+                                        <td>{{ $project->invested }}</td>
                                         <td>{{ $project->interest }}%</td>
                                         <td>{{ $project->duration_months }}</td>
-                                        <td>{{ Currency::format($project->InterestMonthly()) }}</td>
+                                        <td>{{ $project->InterestMonthly() }}</td>
                                         <td>{{ $project->start_date }}</td>
                                         <td>$320,800</td>
                                     </tr>
@@ -135,8 +135,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
+
+                <div class="section">
+                    {{--@include('projects.file_upload')--}}
+                </div>
+
             </div>
             <!--end container-->
         </section>

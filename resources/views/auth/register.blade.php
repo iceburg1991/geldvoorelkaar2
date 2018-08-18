@@ -55,7 +55,7 @@
 <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
         <form class="login-form" method="POST" role="form" action={{ url('/register') }}>
-            {!! csrf_field() !!}
+            {{ csrf_field() }}
             <div class="row">
                 <div class="input-field col s12 center">
                     <h4>Register</h4>

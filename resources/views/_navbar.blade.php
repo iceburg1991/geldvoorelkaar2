@@ -8,7 +8,13 @@
             <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a></li>
             <li class="divider"></li>
             <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
-            <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
+            <li><a href="{{ url('/logout') }}"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="mdi-hardware-keyboard-tab"></i> Logout</a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
         </ul>
         <nav class="cyan">
             <div class="nav-wrapper">
@@ -22,7 +28,7 @@
                                 <img src="/images/avatar.jpg" alt="" class="circle responsive-img valign profile-image right" />
                                 <a href="#!" class="dropdown-button" data-activates="actions">{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
                             @else
-                                <li><a href="/auth/login">Inloggen</a></li>
+                                <li><a href="{{ url('/login') }}">Inloggen</a></li>
                             @endif
                     </ul>
                     <!--{% endif %}-->
@@ -48,7 +54,13 @@
                                             <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a></li>
                                             <li class="divider"></li>
                                             <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
-                                            <li><a href="/auth/logout"><i class="mdi-hardware-keyboard-tab"></i> Logout</a></li>
+                                            <li><a href="{{ url('/logout') }}"
+                                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                    <i class="mdi-hardware-keyboard-tab"></i> Logout</a>
+                                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
                                         </ul>
                                     @endif
                                     <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
@@ -65,7 +77,7 @@
                             <div class="divider "></div>
                             <li><a href="/geldvoorelkaar/app/template/settings.php"><i class="mdi-action-settings left"></i>Instellingen</a></li>
                         @else
-                            <li><a href="/auth/login">Inloggen</a></li>
+                            <li><a href="{{ url('/login') }}">Inloggen</a></li>
                         @endif
                     </ul>
                     <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
