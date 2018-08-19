@@ -1,5 +1,5 @@
 # geldvoorelkaar2
-Geldvoorelkaar gebaseerd op Laravel Lumen Framework
+Geldvoorelkaar gebaseerd op het Laravel Framework
 
 ## Requirements:
 - Git

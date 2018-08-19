@@ -181,9 +181,9 @@ class ProjectController extends Controller
      */
     public function expectedEnd(Request $request){
         $month = Input::get('start_month');
-        $year = intval(Input::get('start_year'));
+        $year = (int)Input::get('start_year');
         $date = Carbon::create($year, $month);
-        $newDate = $date->addMonths(intval(Input::get('duration')));
+        $newDate = $date->addMonths((int)Input::get('duration'));
         $newDateMonth = trans('months.'.$newDate->format('F'));
         $newDateYear = $newDate->format('Y');
         return json_encode(array(
