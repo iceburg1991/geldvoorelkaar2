@@ -21,7 +21,6 @@ class UpdateProjectTable extends Migration
                 $table->renameColumn('start_investing','start_date');
             }
             $table->timestamp('expected_end_date')->nullable();
-            $table->string('currency',4);
         });
     }
 
@@ -42,9 +41,6 @@ class UpdateProjectTable extends Migration
             }
             if (Schema::hasColumn('projects','expected_end_date')) {
                 $table->dropColumn('expected_end_date');
-            }
-            if (Schema::hasColumn('projects','currency')) {
-                $table->dropColumn('currency');
             }
         });
     }

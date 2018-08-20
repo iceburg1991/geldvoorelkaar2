@@ -19,7 +19,7 @@
                     <a href="/projects/{!! $project->id !!}/edit" class="btn-floating btn-large waves-effect waves-light red right" style=""><i class="mdi-editor-mode-edit">edit</i></a>
                     <div class="jumbotron text-center">
                         <p>
-                            @foreach($project['attributes'] as $key => $value)
+                            @foreach($project->getAttributes() as $key => $value)
                                 <strong>{{ $key }}:</strong> {{ $value }}<br />
                             @endforeach
                         </p>

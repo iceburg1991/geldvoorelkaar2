@@ -7,6 +7,9 @@
 /vendor
 /.idea
 /.vagrant
+/.vscode
 Homestead.json
 Homestead.yaml
+npm-debug.log
+yarn-error.log
 _ide_helper.php

@@ -10,7 +10,7 @@ return [
     | based disks are available to your application. Just store away!
     |
     */
-    'default' => 'local',
+    'default' => env('FILESYSTEM_DRIVER', 'local'),
     /*
     |--------------------------------------------------------------------------
     | Default Cloud Filesystem Disk
@@ -21,7 +21,7 @@ return [
     | will be bound as the Cloud disk implementation in the container.
     |
     */
-    'cloud' => 's3',
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -47,9 +47,9 @@ return [
         ],
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_KEY'),
-            'secret' => env('AWS_SECRET'),
-            'region' => env('AWS_REGION'),
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
     ],
